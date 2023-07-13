@@ -28,7 +28,7 @@ class TweetService {
         let newTags = tags.filter(tag=> !alreadyPresentTags.includes(tag));  //it will fillter out tags present in curr.tweet but not in database so we have to add them4
         newTags = newTags.map(tag => {  //converting above array into object one by one so it can be inserted into the database 
             return {
-                text : tag,
+                text : tag, 
                 tweets: [tweet.id]
             }
         })
