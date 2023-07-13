@@ -10,7 +10,7 @@ const likeSchema = new mongoose.Schema({
         enum : ["Tweet","Comment"]  //saying like can be on tweet or on a comment
     },
     likeable:{  //it will automatically choose which of the above model to use ,tweet or comment
-        ype : mongoose.Schema.Types.ObjectId,
+        type : mongoose.Schema.Types.ObjectId,
         required : true,
         refPath:'onModel'
     }
