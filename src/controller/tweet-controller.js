@@ -18,29 +18,29 @@ export const createTweet = async(req,res) =>{
     catch(error){
         return res.status(500).json({
             success:false,
-            message:"Error Encountered",
+            message:"Error Encountered in creating a tweet",
             data :{},
             err : error
         })
     }
 }
-export const getTweet = async(req,res) =>{
+export const getTweet = async (req,res) => {
     try {
-        const id = req.params.id;
-        const response = await TweetService.getTweet(id);
+        const response = await tweetService.getTweet(req.params.id)
+      
         return res.status(201).json({
             success:true,
-            message:"successfully got a tweet",
-            data :response,
-            err :{}
-        })
-    }
-    catch(error){
+            message:"Successfully fetched a tweet",
+            data: response,
+            err:{}
+        });
+    } catch (error) {
         return res.status(500).json({
             success:false,
-            message:"Error Encountered",
-            data :{},
-            err : error
-        })
+            message:"Error Encountered in getting a tweet",
+            data: {},
+            err:error
+        });
+        
     }
 }
